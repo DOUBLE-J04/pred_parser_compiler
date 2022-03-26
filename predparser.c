@@ -73,7 +73,7 @@ void main() {
     
     lookahead = nexttoken();
 
-    exp(); //번역계획의 expr을 의미 (exp를 통해 코드화된 번역계획을 계속해감.)
+    exp();
     if (lookahead == '$'){
         printf("\n");
     }
