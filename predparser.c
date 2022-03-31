@@ -1,6 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
 
-void exp();
+void _exp();
 void term();
 void reset_exp();
 void reset_term();
@@ -30,7 +31,7 @@ void match(char token) {
     }
 }
 
-void exp(){
+void _exp(){
     term(); printf("3"); reset_exp();
 }
 void reset_exp(){
@@ -64,7 +65,7 @@ void factor(){
         match(lookahead);
     }
     else{
-        match('('); exp(); match(')'); printf("7");
+        match('('); _exp(); match(')'); printf("7");
     }
     
 }
@@ -73,7 +74,7 @@ void main() {
     
     lookahead = nexttoken();
 
-    exp();
+    _exp(); //exp()함수는 예약어라 컴파일상 오류발생함으로 앞에 _추가.
     if (lookahead == '$'){
         printf("\n");
     }
